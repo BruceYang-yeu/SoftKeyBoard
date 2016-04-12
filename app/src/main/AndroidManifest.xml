@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gdbbk.dw.softkeyboard">
+    <uses-sdk android:minSdkVersion="13" android:maxSdkVersion="23"/>
+
+    <application
+        android:label="@string/ime_name"
+        android:icon="@mipmap/ic_launcher">
+        <service android:name=".keyboard.SoftKeyboard" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+        <activity android:name=".keyboard.ImePreferences" android:label="@string/settings_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>
